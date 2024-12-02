@@ -33,6 +33,7 @@ function LoginComponent() {
         <div className="login-container">
             <form onSubmit={handleLogin} className="login-container-form">
                 <h1>Login</h1>
+                <p className="login-text">Enter your account details</p>
                 {/* Input for username */}
                 <input
                     type="text"
@@ -52,12 +53,12 @@ function LoginComponent() {
                     className="input-field"
                 />
                 {/* Submit button */}
-                <button type="submit" className="btn">
+                <button type="submit" className="btn-login">
                     Login
                 </button>
                 {/* Display error message */}
                 <p className="message">{message}</p>
-                <p>
+                <p className="signup-text">
                     Don&apos;t have an account?{" "}
                     <span onClick={() => navigate("/signup")} className="link">
                         Sign Up
