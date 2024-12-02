@@ -101,7 +101,7 @@ function Game() {
           ))}
         </div>
         <p>Turns : {turns}</p>
-        <button onClick={shuffleCards}>Reset</button>
+        <button onClick={shuffleCards} className="btn-reset-game">Reset</button>
       </div>
     </>
   );

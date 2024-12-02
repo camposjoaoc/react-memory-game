@@ -1,0 +1,44 @@
+/* Centered container with responsive dimensions and styling */
+.login-container{
+    width: 90vw;
+    /* Responsive width: 90% of the viewport width */
+    max-width: 600px;
+    /* Maximum width for larger screens */
+    height: 60vh;
+    /* Responsive height: 60% of the viewport height */
+    max-height: 570px;
+    /* Maximum height for larger screens */
+    background: #1B5224;
+    /* Green background */
+    display: flex;
+    /* Center content with flexbox */
+    justify-content: center;
+    /* Horizontally center content */
+    align-items: center;
+    /* Vertically center content */
+    position: absolute;
+    /* Required for centering with transform */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centering adjustment */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+}
+
+/* Form layout with responsive spacing */
+.login-container-form {
+    display: flex;
+    flex-direction: column;
+    /* Vertical alignment of form fields */
+    gap: 1rem;
+    /* Space between form fields */
+    width: 80%;
+    /* Form width relative to the container */
+    max-width: 300px;
+    /* Maximum width of the form */
+    padding: 1rem;
+    /* Padding inside the form */
+}
