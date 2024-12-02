@@ -1,12 +1,17 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import GamePage from "./pages/gamePage";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Magic Match</h1>
-      <button>New Game</button>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<GamePage />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
-export default App
+export default App;
