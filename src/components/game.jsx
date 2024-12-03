@@ -87,7 +87,7 @@ function Game() {
   return (
     <>
       <div className="App">
-        <h1>Magic Match</h1>
+        <h1 className="title-game">Magic Match</h1>
 
         <div className="card-grid">
           {cards.map((card) => (

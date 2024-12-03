@@ -13,10 +13,13 @@
 .card .front {
   transform: rotateY(90deg);
   position: absolute;
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
 }
 
 .flipped .front {
   transform: rotateY(0deg);
+
 }
 
 /* back of card, cover */
@@ -27,5 +30,5 @@
 
 .flipped .back {
   transform: rotateY(90deg);
-  transition-delay: 0s;
+  transition-delay: 0.2s;
 }

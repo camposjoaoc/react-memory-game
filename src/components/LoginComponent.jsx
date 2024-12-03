@@ -32,7 +32,7 @@ function LoginComponent() {
     return (
         <div className="login-container">
             <form onSubmit={handleLogin} className="login-container-form">
-                <h1>Login</h1>
+                <h1 className="title-login">Login</h1>
                 <p className="login-text">Enter your account details</p>
                 {/* Input for username */}
                 <input
