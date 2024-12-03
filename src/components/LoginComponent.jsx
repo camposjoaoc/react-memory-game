@@ -8,10 +8,7 @@ function LoginComponent() {
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState(""); // State for error messages
     const navigate = useNavigate(); // React Router's hook for navigation
-
-
-
-
+    
     const handleLogin = (event) => {
         event.preventDefault(); // Prevent default form submission behavior
 
