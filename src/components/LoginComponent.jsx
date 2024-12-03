@@ -9,6 +9,9 @@ function LoginComponent() {
     const [message, setMessage] = useState(""); // State for error messages
     const navigate = useNavigate(); // React Router's hook for navigation
 
+
+
+
     const handleLogin = (event) => {
         event.preventDefault(); // Prevent default form submission behavior
 
@@ -24,7 +27,7 @@ function LoginComponent() {
             setMessage(""); // Clear any previous error messages
             navigate("/games"); // Navigate to the "games" page after successful login
         } else {
-            setMessage("Invalid username or password."); // Display error message
+            setMessage("Attention: Invalid username or password!"); // Display error message
             setPassword(""); // Clear the password field
         }
     };
@@ -52,19 +55,23 @@ function LoginComponent() {
                     required
                     className="input-field"
                 />
+
                 {/* Submit button */}
                 <button type="submit" className="btn-login">
                     Login
                 </button>
                 {/* Display error message */}
                 <p className="message">{message}</p>
-                <p className="signup-text">
-                    Don&apos;t have an account?{" "}
-                    <span onClick={() => navigate("/signup")} className="link">
-                        Sign Up
-                    </span>
-                </p>
+                {/* Link to Sign Up page */}
+
+                <div className="container-inside">
+                    <p className="signup-text">
+                        Don&apos;t have an account?{" "}
+                    </p>
+                    <button onClick={() => navigate("/signup")} className="btn-link">Sign Up</button>
+                </div>
             </form>
+
         </div>
     );
 }

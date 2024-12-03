@@ -98,7 +98,7 @@ function SignUpComponent() {
                 />
                 {/* Submit button */}
                 <button type="submit" className="btn">
-                    Sign Up
+                    Create
                 </button>
                 {/* Display error or success messages */}
                 <p className="message">{message}</p>
