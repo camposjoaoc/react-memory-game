@@ -5,15 +5,15 @@ import SingleCard from "../components/SingleCard";
 //ObjectArray of cards
 
 const cardImages = [
-  { src: "/img/ananas.png", matched: false },
-  { src: "/img/apple.png", matched: false },
-  { src: "/img/banana.png", matched: false },
-  { src: "/img/cherry.png", matched: false },
-  { src: "/img/grapes.png", matched: false },
-  { src: "/img/lime.png", matched: false },
-  { src: "/img/peach.png", matched: false },
-  { src: "/img/YellowWatermelon.png", matched: false },
-  { src: "/img/RedWatermelon.png", matched: false },
+  { src: "/img/PinappleCard.png", matched: false },
+  { src: "/img/GreenAppleCard.png", matched: false },
+  { src: "/img/bananaCard.png", matched: false },
+  { src: "/img/CherryCard.png", matched: false },
+  { src: "/img/GrapeCard.png", matched: false },
+  { src: "/img/LemonCard.png", matched: false },
+  { src: "/img/PeachCard.png", matched: false },
+  { src: "/img/melonCard.png", matched: false },
+  { src: "/img/WatermelonCard.png", matched: false },
 ];
 
 function Game() {
