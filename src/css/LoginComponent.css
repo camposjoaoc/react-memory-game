@@ -1,150 +1,173 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
 /* =====================Login Page================================ */
 
-/* Centered container with responsive dimensions and styling */
+/* Main container for the login page */
 .login-container {
   width: 90vw;
-  /* Responsive width: 90% of the viewport width */
+  /* Scales to 90% of the viewport width for responsiveness */
   max-width: 600px;
-  /* Maximum width for larger screens */
+  /* Limits the container width to avoid stretching on larger screens */
   height: 60vh;
-  /* Responsive height: 60% of the viewport height */
+  /* Scales to 60% of the viewport height */
   max-height: 570px;
-  /* Maximum height for larger screens */
+  /* Caps the height for consistency */
   background: #1B5224;
-  /* Green background */
+  /* Sets a green background to align with the theme */
   display: flex;
-  /* Center content with flexbox */
+  /* Enables flexible layout for centering content */
   justify-content: center;
-  /* Horizontally center content */
+  /* Centers content horizontally */
   align-items: center;
-  /* Vertically center content */
+  /* Centers content vertically */
   position: absolute;
-  /* Required for centering with transform */
+  /* Positions the container relative to the viewport */
   top: 50%;
+  /* Moves the container halfway down the screen */
   left: 50%;
+  /* Moves the container halfway across the screen */
   transform: translate(-50%, -50%);
-  /* Centering adjustment */
+  /* Centers the container exactly */
   border-radius: 20px;
-  /* Rounded corners */
+  /* Gives the container rounded corners for a modern look */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  /* Shadow for depth */
+  /* Adds depth with a soft shadow */
 }
 
-/* Form layout with responsive spacing */
+/* Form inside the login container */
 .login-container-form {
   display: flex;
+  /* Flexbox layout for stacking form elements */
   flex-direction: column;
-  /* Vertical alignment of form fields */
+  /* Aligns items vertically */
   gap: 1rem;
-  /* Space between form fields */
+  /* Adds consistent spacing between elements */
   width: 80%;
-  /* Form width relative to the container */
+  /* Restricts the form width relative to the container */
   max-width: 400px;
-  /* Maximum width of the form */
+  /* Ensures the form doesn't stretch too wide */
   padding: 1rem;
-  /* Padding inside the form */
+  /* Adds padding inside the form for spacing */
 }
 
+/* Container for additional content, such as the sign-up section */
 .container-inside {
   display: flex;
+  /* Aligns items horizontally */
   gap: 1rem;
+  /* Adds spacing between child elements */
   width: 90%;
+  /* Makes the container slightly smaller than the parent container */
   padding: 10px;
+  /* Adds internal spacing */
 }
 
+/* Header text styling */
 h1 {
   text-align: left;
+  /* Aligns header text to the left */
   font-family: "Rakkas", serif;
+  /* Uses a decorative serif font for emphasis */
   font-weight: 400;
-  font-style: normal;
+  /* Normal font weight for a clean look */
   margin-top: 10px;
   margin-bottom: 12px;
 }
 
+/* Subtitle text below the header */
 .login-text {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  text-align: left;
+  /* Modern sans-serif font for readability */
   opacity: 0.7;
-  margin-top: 0px;
+  /* Makes the text slightly transparent for subtlety */
+  font-size: 16px;
+  /* Sets a standard, readable font size */
+  text-align: left;
   margin-bottom: 20px;
+  /* Adds spacing below the text */
 }
 
+/* Styling for input fields */
 .input-field {
   background-color: transparent;
+  /* Transparent background for a minimalistic look */
   border: none;
+  /* Removes default borders */
   border-bottom: 2px solid #ccc;
+  /* Adds an underline to indicate input focus area */
   outline: none;
-  width: 100%;
-  margin-bottom: 15px;
+  /* Removes the default focus outline */
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   font-size: 16px;
   color: #fff;
-  text-align: left;
+  /* White text for contrast against the dark background */
 }
 
 input[type="text"]::placeholder,
 input[type="password"]::placeholder {
   color: #fff;
+  /* Matches the input text color */
   opacity: 0.5;
+  /* Reduces opacity for a subtle placeholder effect */
 }
 
+/* Primary button for login */
 .btn-login {
   margin-top: 24px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  /* Adds spacing above the button */
   background-color: #FFBD40;
+  /* Bright yellow for high visibility */
   border: 1px solid #FFBD40;
+  /* Matches the button color for a seamless design */
   color: #050000;
+  /* Black text for contrast against the yellow background */
   padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  /* Adds padding for a clickable area */
   border-radius: 12px;
+  /* Rounds the edges of the button */
+  text-align: center;
+  cursor: pointer;
+  /* Changes the cursor to indicate interactivity */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for hover effects */
 }
 
+/* Subtle text for the sign-up link */
 .signup-text {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   font-size: 16px;
-  text-align: left;
   color: #F1F1F1;
+  /* Soft white for less emphasis */
 }
 
+/* Button link for sign-up */
 .btn-link {
   background-color: #A6D388;
-  width: 8vw;
-  height: 5vh;
-  background: #A6D388;
+  /* Soft green to differentiate from the login button */
   border-radius: 8px;
+  /* Slightly rounded corners */
   font-size: 14px;
   padding: 12px 24px;
-  gap: 10px;
+  /* Adds padding for a larger clickable area */
   cursor: pointer;
+  /* Indicates interactivity */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Adds hover/active effects */
 }
 
 .btn-link:hover {
   transform: translateY(-4px);
+  /* Moves the button up slightly for feedback */
 }
 
 .btn-link:active {
   transform: translateY(2px);
+  /* Simulates a press effect */
 }
 
+/* Error message styling */
 .message {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   font-size: 16px;
-  text-align: left;
   color: #aa4747;
+  /* Red to indicate error */
 }
