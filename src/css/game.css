@@ -1,8 +1,13 @@
+body {
+  width: 100%;
+  background-color: red;;
+}
+
 .App {
   text-align: center;
   width: 100%;
   height: 100vh;
-  background-image: url("/public/img/background.png");
+  background-color: #4b9e59b9;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,24 +15,47 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
+
+h1 {
+  color: #1B5224;
+  background-color: #9CFDA1;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: 5px solid #1B5224;
+  border-radius: 1em;
+}
+
 .btn-reset-game {
-  background: none;
-  border: 2px solid #fff;
+  background-color: #1B5224;
+  border: 1px solid #FFAA00;
+  height: 40px;
+  width: 130px;
   padding: 6px 12px;
-  border-radius: 4px;
-  color: #fff;
+  border-radius: 5px;
+  color: #FFAA00;
   font-weight: bold;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 16px;
+  transition: 0.3s;
 }
+
 .btn-reset-game:hover {
-  background: #c23866;
+  background: #FFAA00;
   color: #fff;
 }
+
 .card-grid {
   margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
+  padding: 10px;
+}
+
+p {
+  padding: 10px;
+  font-size: 32px;
+  font-weight: 900;
 }
