@@ -1,6 +1,7 @@
 body {
   width: 100%;
-  background-color: red;;
+  background-color: #4b9e59b9;
+  ;
 }
 
 .App {
@@ -18,7 +19,7 @@ body {
   padding: 20px;
 }
 
-h1 {
+.title-game {
   color: #1B5224;
   background-color: #9CFDA1;
   padding-left: 25px;
