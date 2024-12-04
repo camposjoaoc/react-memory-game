@@ -59,7 +59,7 @@ function SignUpComponent() {
     return (
         <div className="signUp-container">
             <form onSubmit={handleSignUp} className="signUp-container-form">
-                <h1>Sign Up</h1>
+                <h1 className="title-signup">Sign Up</h1>
                 {/* Input for username */}
                 <input
                     type="text"
@@ -97,14 +97,14 @@ function SignUpComponent() {
                     className="input-field"
                 />
                 {/* Submit button */}
-                <button type="submit" className="btn">
+                <button type="submit" className="btn-signup">
                     Create
                 </button>
                 {/* Display error or success messages */}
                 <p className="message">{message}</p>
-                <p>
+                <p className="signup-text">
                     Already have an account?{" "}
-                    <span onClick={() => navigate("/")} className="link">
+                    <span onClick={() => navigate("/")} className="btn-link">
                         Login
                     </span>
                 </p>
