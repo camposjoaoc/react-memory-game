@@ -1,8 +1,7 @@
 import "../css/game.css";
 import { useEffect, useState } from "react";
 import SingleCard from "../components/SingleCard";
-
-//ObjectArray of cards
+import Popup from "../components/Popup";
 
 const cardImages = [
   { src: "/img/PinappleCard.png", matched: false },
@@ -22,34 +21,26 @@ function Game() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
-
-  // sheffle cards
+  const [gameOver, setGameOver] = useState(false); // Game over state
 
   const shuffleCards = () => {
-    // dublcate each card once
-    const shuffleCards = [...cardImages, ...cardImages] //Now we have 18 cards instead of 9.
-
-      //randomize the order of the cards in the array
+    const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
-      //applay a random id to each of the 12 cards
       .map((card) => ({ ...card, id: Math.random() }));
     setChoiceOne(null);
     setChoiceTwo(null);
-
-    setCards(shuffleCards);
+    setCards(shuffledCards);
     setTurns(0);
+    setGameOver(false); // Reset game over state
   };
 
-  // handle a choice
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
-  // compare 2 selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
-
       if (choiceOne.src === choiceTwo.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -60,7 +51,6 @@ function Game() {
             }
           });
         });
-
         resetTurn();
       } else {
         setTimeout(() => resetTurn(), 1000);
@@ -68,9 +58,12 @@ function Game() {
     }
   }, [choiceOne, choiceTwo]);
 
-  console.log(cards);
-
-  //reset choices & increase turn
+  useEffect(() => {
+    // Check if all cards are matched
+    if (cards.length > 0 && cards.every((card) => card.matched)) {
+      setGameOver(true);
+    }
+  }, [cards]);
 
   const resetTurn = () => {
     setChoiceOne(null);
@@ -79,31 +72,34 @@ function Game() {
     setDisabled(false);
   };
 
-  // start new game automaticaly
   useEffect(() => {
     shuffleCards();
   }, []);
 
   return (
-    <>
-      <div className="App">
-        <h1 className="title-game">Magic Match</h1>
-
-        <div className="card-grid">
-          {cards.map((card) => (
-            <SingleCard
-              key={card.id}
-              card={card}
-              handleChoice={handleChoice}
-              flipped={card === choiceOne || card === choiceTwo || card.matched}
-              disabled={disabled}
-            />
-          ))}
-        </div>
-        <p>Turns : {turns}</p>
-        <button onClick={shuffleCards} className="btn-reset-game">Reset</button>
+    <div className="App">
+      <h1 className="title-game">Magic Match</h1>
+      <div className="card-grid">
+        {cards.map((card) => (
+          <SingleCard
+            key={card.id}
+            card={card}
+            handleChoice={handleChoice}
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+            disabled={disabled}
+          />
+        ))}
       </div>
-    </>
+      <p>Turns: {turns}</p>
+      <button onClick={shuffleCards} className="btn-reset-game">
+        Reset
+      </button>
+
+      {/* Show Popup when game is over */}
+      {gameOver && (
+        <Popup message="Congratulations! You've matched all cards!" onRestart={shuffleCards} />
+      )}
+    </div>
   );
 }
 
