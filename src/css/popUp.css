@@ -31,7 +31,8 @@
   .btn-restart {
     background-color: #1b5224;
     color: #ffaa00;
-    max-width: 150px;
+    max-width: 180px;
+    max-height: 50px;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
