@@ -1,44 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
 /* Centered container with responsive dimensions and styling */
 .signUp-container {
     width: 90vw;
-    /* Responsive width: 90% of the viewport width */
     max-width: 600px;
-    /* Maximum width for larger screens */
     height: 60vh;
-    /* Responsive height: 60% of the viewport height */
-    max-height: 570px;
-    /* Maximum height for larger screens */
+    max-height: 600px;
     background: #1B5224;
-    /* Green background */
     display: flex;
-    /* Center content with flexbox */
     justify-content: center;
-    /* Horizontally center content */
     align-items: center;
-    /* Vertically center content */
     position: absolute;
-    /* Required for centering with transform */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Centering adjustment */
-    border-radius: 8px;
-    /* Rounded corners */
+    border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    /* Shadow for depth */
 }
 
 /* Form layout with responsive spacing */
 .signUp-container-form {
     display: flex;
     flex-direction: column;
-    /* Vertical alignment of form fields */
     gap: 1rem;
-    /* Space between form fields */
     width: 80%;
-    /* Form width relative to the container */
-    max-width: 300px;
-    /* Maximum width of the form */
+    max-width: 400px;
     padding: 1rem;
-    /* Padding inside the form */
+}
+
+/* Header text styling */
+.title-signup{
+    text-align: left;
+    font-family: "Rakkas", serif;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+/* Subtitle text below the header */
+input[type="email"]::placeholder {
+    color: #fff;
+    opacity: 0.5;
+}
+
+.btn-signup{
+    margin-top: 24px;
+    background-color: #FFBD40;
+    border: 1px solid #FFBD40;
+    color: #050000;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+.input-field {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(204,204,204, 0.5);
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    padding-bottom: 15px;
+    height: 5vh;
+    color: #fff;
+}
+
+
+/* Button link for sign-up */
+.btn-link {
+    background-color: #A6D388;
+    border-radius: 8px;
+    border-color: none;
+    font-size: 14px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #F1F1F1;
+    font-weight: 400;
+    margin-left: 40px;
+  }
+  .btn-link:hover {
+    transform: translateY(-4px);
+    /* Moves the button up slightly for feedback */
+  }
+  
+  .btn-link:active {
+    transform: translateY(2px);
+    /* Simulates a press effect */
+  }
+
+
+
+/* Autofill styling for input fields */
+.input-field:-webkit-autofill {
+    background-color: transparent !important; 
+    color: #fff !important; /* Ensure text remains visible */
+    -webkit-box-shadow: 0 0 0px 1000px #1B5224 inset !important; /* Prevent background override */
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+.input-field:-webkit-autofill::first-line {
+    color: #fff !important; /* Ensure the text color is consistent */
 }
