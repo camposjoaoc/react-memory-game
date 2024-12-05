@@ -72,6 +72,7 @@ input[type="email"]::placeholder {
 /* Button link for sign-up */
 .btn-link {
     background-color: #A6D388;
+    min-width: 120px;
     border-radius: 8px;
     border-color: none;
     font-size: 14px;
@@ -92,6 +93,11 @@ input[type="email"]::placeholder {
   .btn-link:active {
     transform: translateY(2px);
     /* Simulates a press effect */
+  }
+
+  .signup-text {
+    display: flex;
+    justify-content: space-between;
   }
 
 
@@ -155,7 +161,6 @@ input[type="email"]::placeholder {
         align-items: center;
         overflow: hidden;
       }
-    
   
       .title-signup {
           margin-top: 20px;
@@ -173,6 +178,7 @@ input[type="email"]::placeholder {
           display: flex;
           justify-content: space-around;
           overflow: hidden;
+          min-width: 90px;
       }
   }
   
