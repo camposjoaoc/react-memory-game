@@ -105,7 +105,7 @@ function SignUpComponent() {
                 <p className="signup-text">
                     Already have an account?{" "}
                     <span onClick={() => navigate("/")} className="btn-link">
-                        Login
+                        Sign in
                     </span>
                 </p>
             </form>
