@@ -33,3 +33,25 @@
   transform: rotateY(90deg);
   transition-delay: 0.2s;
 }
+
+@media (max-width: 1024px) { /* iPads */
+  .card img {
+    width: 80%; 
+  }
+}
+
+@media (max-width: 768px) { /* Tablets */
+  .card img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card img {
+    width: 60%;
+  }
+
+  .flipped .front, .flipped .back {
+    transition: all ease-in 0.1s; 
+  }
+}

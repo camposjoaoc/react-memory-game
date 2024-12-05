@@ -48,3 +48,54 @@
     border: 2px solid #1b5224;
   }
   
+
+  @media (max-width: 1024px) { /* iPads */
+    .popup {
+      width: 70%;
+      height: 400px;
+      padding: 15px 30px;
+    }
+  
+    .popup h2 {
+      font-size: 24px;
+    }
+  
+    .btn-restart {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 768px) { /* Tablets */
+    .popup {
+      width: 80%;
+      height: 300px;
+    }
+  
+    .popup h2 {
+      font-size: 20px;
+    }
+  
+    .btn-restart {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+  
+  @media (max-width: 480px) { /* Phones */
+    .popup {
+      width: 90%;
+      height: 250px;
+      padding: 10px 20px;
+    }
+  
+    .popup h2 {
+      font-size: 16px;
+    }
+  
+    .btn-restart {
+      font-size: 10px;
+      padding: 4px 8px;
+    }
+  }
+  

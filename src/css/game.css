@@ -60,3 +60,51 @@ p {
   font-size: 32px;
   font-weight: 900;
 }
+
+
+@media (max-width: 900px) { /* iPads */
+  .App {
+    padding: 10px;
+  }
+
+  .title-game {
+    font-size: 32px;
+    padding: 10px 20px;
+    border-width: 3px;
+  }
+
+  .btn-reset-game {
+    font-size: 14px;
+    height: 36px;
+    width: 120px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Adjust grid layout */
+  }
+}
+
+
+
+@media (max-width: 480px) { /* Phones */
+  .title-game {
+    font-size: 20px;
+    padding: 5px 10px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-gap: 8px;
+  }
+
+  .btn-reset-game {
+    width: 80px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
