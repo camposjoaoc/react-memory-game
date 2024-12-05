@@ -34,17 +34,12 @@
   transition-delay: 0.2s;
 }
 
-@media (max-width: 1024px) { /* iPads */
+@media (max-width: 900px) { 
   .card img {
     width: 80%; 
   }
 }
 
-@media (max-width: 768px) { /* Tablets */
-  .card img {
-    width: 70%;
-  }
-}
 
 @media (max-width: 480px) {
   .card img {

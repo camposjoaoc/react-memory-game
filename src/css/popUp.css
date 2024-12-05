@@ -27,6 +27,11 @@
   .popup h2 {
     margin-bottom: 20px;
   }
+
+  .popup h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
   
   .btn-restart {
     background-color: #1b5224;
@@ -49,7 +54,7 @@
   }
   
 
-  @media (max-width: 1024px) { /* iPads */
+  @media (max-width: 900px){
     .popup {
       width: 70%;
       height: 400px;
@@ -57,7 +62,12 @@
     }
   
     .popup h2 {
-      font-size: 24px;
+      font-size: 28px;
+    }
+
+    .popup h3 {
+      font-size: 22px;
+  
     }
   
     .btn-restart {
@@ -66,23 +76,9 @@
     }
   }
   
-  @media (max-width: 768px) { /* Tablets */
-    .popup {
-      width: 80%;
-      height: 300px;
-    }
+ 
   
-    .popup h2 {
-      font-size: 20px;
-    }
-  
-    .btn-restart {
-      font-size: 12px;
-      padding: 6px 12px;
-    }
-  }
-  
-  @media (max-width: 480px) { /* Phones */
+  @media (max-width: 480px){
     .popup {
       width: 90%;
       height: 250px;
@@ -90,12 +86,19 @@
     }
   
     .popup h2 {
+      font-size: 22px;
+    }
+
+    .popup h3 {
       font-size: 16px;
     }
   
     .btn-restart {
+      min-width: 100px;
+      min-height: 30px;
       font-size: 10px;
       padding: 4px 8px;
     }
   }
+  
   

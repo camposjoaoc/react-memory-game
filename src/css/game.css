@@ -1,12 +1,11 @@
 body {
   width: 100%;
   background-color: #4b9e59b9;
-  ;
 }
 
 .App {
   text-align: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #4b9e59b9;
   background-size: cover;
@@ -22,8 +21,7 @@ body {
 .title-game {
   color: #1B5224;
   background-color: #9CFDA1;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 20px 25px;
   border: 5px solid #1B5224;
   border-radius: 1em;
 }
@@ -62,9 +60,13 @@ p {
 }
 
 
-@media (max-width: 900px) { /* iPads */
+@media (max-width: 900px) { 
   .App {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .title-game {
@@ -80,22 +82,34 @@ p {
   }
 
   .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px; /* Adjust grid layout */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+   justify-content: space-evenly;
+   align-items: center;
   }
 }
 
 
 
-@media (max-width: 480px) { /* Phones */
+@media (max-width: 480px) { 
+  .app {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
   .title-game {
     font-size: 20px;
     padding: 5px 10px;
   }
 
   .card-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-template-columns: repeat(3, 1fr); 
     grid-gap: 8px;
+    justify-content: center; 
+    align-items: center;
   }
 
   .btn-reset-game {
