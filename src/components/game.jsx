@@ -22,6 +22,7 @@ function Game() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [gameOver, setGameOver] = useState(false); // Game over state
+  const [showPopup, setShowPopup] = useState(false);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -32,6 +33,7 @@ function Game() {
     setCards(shuffledCards);
     setTurns(0);
     setGameOver(false); // Reset game over state
+    setShowPopup(false); //Reset popup state
   };
 
   const handleChoice = (card) => {
@@ -95,9 +97,18 @@ function Game() {
         Reset
       </button>
 
-      {/* Show Popup when game is over */}
+      {/* Show Popup when game is over with a delay 1 sec */}
       {gameOver && (
-        <Popup message="Congratulations! You've matched all cards!" onRestart={shuffleCards} />
+        <>
+          {setTimeout(() => setShowPopup(true), 1000) && null}
+          {showPopup && (
+            <Popup
+              message="Congratulations! You've matched all cards!"
+              turns={turns}
+              onRestart={shuffleCards}
+            />
+          )}
+        </>
       )}
     </div>
   );
