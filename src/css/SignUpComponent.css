@@ -4,7 +4,7 @@
     width: 90vw;
     max-width: 600px;
     height: 60vh;
-    max-height: 600px;
+    max-height: 700px;
     background: #1B5224;
     display: flex;
     justify-content: center;
@@ -108,3 +108,71 @@ input[type="email"]::placeholder {
 .input-field:-webkit-autofill::first-line {
     color: #fff !important; /* Ensure the text color is consistent */
 }
+
+
+@media (max-width: 900px) { 
+    .signUp-container {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+  
+    .title-signup{
+        text-align: left;
+        font-family: "Rakkas", serif;
+        font-weight: 400;
+        padding-top: 20px;
+        margin-bottom: 12px;
+    }
+
+    .title-signup {
+        margin-top: 10px;
+    }
+  
+    .btn-link {
+      font-size: 14px;
+      height: 36px;
+      width: 120px;
+      margin-bottom: 20px;
+    }
+  
+    .signup-text {
+        margin-bottom: 30px;
+    }
+  }
+  
+  
+  
+  @media (max-width: 480px) { 
+    .signUp-container {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+    
+  
+      .title-signup {
+          margin-top: 20px;
+      }
+    
+      .btn-link {
+        font-size: 14px;
+        height: 36px;
+        width: 120px;
+        margin-bottom: 20px;
+      }
+    
+      .signup-text {
+          margin-bottom: 30px;
+          display: flex;
+          justify-content: space-around;
+          overflow: hidden;
+      }
+  }
+  
