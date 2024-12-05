@@ -23,7 +23,34 @@ function Game() {
   const [disabled, setDisabled] = useState(false);
   const [gameOver, setGameOver] = useState(false); // Game over state
   const [showPopup, setShowPopup] = useState(false);
+  const [sound, setSound] = useState(null);
+  const [bgMusic, setBgMusic] = useState(null);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
 
+  const apiKey = "F5i6TlqMDuLjO5vqPUIxX38yy0ks87wmK8vO0wDF"; // Replace with your Freesound API key
+  const soundId = "420668"; // Replace with the ID of the sound you want to fetch
+  const bgMusicId = "653518"; // Background music ID
+
+  // Fetch sound effects and background music from Freesound API
+  useEffect(() => {
+    // Fetch sound for card flip
+    fetch(`https://freesound.org/apiv2/sounds/${soundId}/?token=${apiKey}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setSound(data.previews["preview-hq-mp3"]); // Save the sound preview URL
+      })
+      .catch((error) => console.error("Error fetching the sound:", error));
+
+    // Fetch background music
+    fetch(`https://freesound.org/apiv2/sounds/${bgMusicId}/?token=${apiKey}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setBgMusic(data.previews["preview-hq-mp3"]); // Save the background music URL
+      })
+      .catch((error) => console.error("Error fetching the background music:", error));
+  }, []);
+
+  // Shuffle the cards
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
@@ -33,13 +60,18 @@ function Game() {
     setCards(shuffledCards);
     setTurns(0);
     setGameOver(false); // Reset game over state
-    setShowPopup(false); //Reset popup state
+    setShowPopup(false); // Reset popup state
   };
 
+  // Handle card choice and play sound
   const handleChoice = (card) => {
+    if (sound) {
+      new Audio(sound).play(); // Play sound when a card is clicked
+    }
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
+  // Handle card matching logic
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
@@ -60,13 +92,14 @@ function Game() {
     }
   }, [choiceOne, choiceTwo]);
 
+  // Check if all cards are matched
   useEffect(() => {
-    // Check if all cards are matched
     if (cards.length > 0 && cards.every((card) => card.matched)) {
       setGameOver(true);
     }
   }, [cards]);
 
+  // Reset the game turn
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
@@ -74,6 +107,17 @@ function Game() {
     setDisabled(false);
   };
 
+  // Play background music when the game starts
+  useEffect(() => {
+    if (bgMusic && !isMusicPlaying) {
+      const music = new Audio(bgMusic);
+      music.loop = true; // Loop the background music
+      music.play();
+      setIsMusicPlaying(true); // Set the music as playing
+    }
+  }, [bgMusic, isMusicPlaying]);
+
+  // Timer effect
   useEffect(() => {
     shuffleCards();
   }, []);
