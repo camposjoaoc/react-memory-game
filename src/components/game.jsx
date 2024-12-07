@@ -26,10 +26,12 @@ function Game() {
   const [sound, setSound] = useState(null);
   const [bgMusic, setBgMusic] = useState(null);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [goSound, setGoSound] = useState(null); //GameOver SOundEffect
 
   const apiKey = "F5i6TlqMDuLjO5vqPUIxX38yy0ks87wmK8vO0wDF"; // Replace with your Freesound API key
   const soundId = "420668"; // Replace with the ID of the sound you want to fetch
   const bgMusicId = "653518"; // Background music ID
+  const goSoundId = "173859"; //GameOver SoundId
 
   // Fetch sound effects and background music from Freesound API
   useEffect(() => {
@@ -47,7 +49,17 @@ function Game() {
       .then((data) => {
         setBgMusic(data.previews["preview-hq-mp3"]); // Save the background music URL
       })
-      .catch((error) => console.error("Error fetching the background music:", error));
+      .catch((error) =>
+        console.error("Error fetching the background music:", error)
+      );
+
+    //Fetch GameOver SoundEffect
+    fetch(`https://freesound.org/apiv2/sounds/${goSoundId}/?token=${apiKey}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setGoSound(data.previews["preview-hq-mp3"]); // Save the sound preview URL
+      })
+      .catch((error) => console.error("Error fetching the sound:", error));
   }, []);
 
   // Shuffle the cards
@@ -142,6 +154,7 @@ function Game() {
       </button>
 
       {/* Show Popup when game is over with a delay 1 sec */}
+
       {gameOver && (
         <>
           {setTimeout(() => setShowPopup(true), 1000) && null}
@@ -149,6 +162,7 @@ function Game() {
             <Popup
               message="Congratulations! You've matched all cards!"
               turns={turns}
+              sound={new Audio(goSound).play()} //GameOver Sound
               onRestart={shuffleCards}
             />
           )}
