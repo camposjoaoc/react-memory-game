@@ -31,7 +31,7 @@ function Game() {
   const apiKey = "F5i6TlqMDuLjO5vqPUIxX38yy0ks87wmK8vO0wDF"; // Replace with your Freesound API key
   const soundId = "420668"; // Replace with the ID of the sound you want to fetch
   const bgMusicId = "653518"; // Background music ID
-  const goSoundId = "173859"; //GameOver SoundId
+  const goSoundId = "500977"; //GameOver SoundId
 
   // Fetch sound effects and background music from Freesound API
   useEffect(() => {
