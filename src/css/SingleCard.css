@@ -34,18 +34,7 @@
   transition-delay: 0.2s;
 }
 
-@media (max-width: 900px) { 
-  .card img {
-    width: 80%; 
-  }
-}
-
-
 @media (max-width: 480px) {
-  .card img {
-    width: 60%;
-  }
-
   .flipped .front, .flipped .back {
     transition: all ease-in 0.1s; 
   }
