@@ -1,5 +1,6 @@
 import "../css/game.css";
 import { useEffect, useState } from "react";
+import Logoff from "../components/Logoff";
 import SingleCard from "../components/SingleCard";
 import Popup from "../components/Popup";
 
@@ -149,9 +150,13 @@ function Game() {
         ))}
       </div>
       <p>Turns: {turns}</p>
-      <button onClick={shuffleCards} className="btn-reset-game">
-        Reset
-      </button>
+      <div className="buttons-options">
+        <button onClick={shuffleCards} className="btn-reset-game">
+          Reset
+        </button>
+        <Logoff />
+      </div>
+
 
       {/* Show Popup when game is over with a delay 1 sec */}
 

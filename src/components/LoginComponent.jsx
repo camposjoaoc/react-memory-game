@@ -3,26 +3,28 @@ import { useNavigate } from "react-router-dom";
 import "../css/LoginComponent.css"; // Importing CSS for styling
 
 function LoginComponent() {
-    // State variables for form inputs
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [message, setMessage] = useState(""); // State for error messages
+    const [username, setUsername] = useState(""); // State for username input
+    const [password, setPassword] = useState(""); // State for password input
+    const [message, setMessage] = useState(""); // State for displaying error messages
     const navigate = useNavigate(); // React Router's hook for navigation
-    
+
     const handleLogin = (event) => {
         event.preventDefault(); // Prevent default form submission behavior
 
-        // Retrieve existing users from localStorage or initialize with an empty array
+        // Retrieve users from localStorage or initialize with an empty array
         const users = JSON.parse(localStorage.getItem("users")) || [];
 
-        // Find user with matching username and password
+        // Find user matching username and password
         const user = users.find(
             (user) => user.username === username && user.password === password
         );
 
         if (user) {
+            // Save session state in localStorage without expiration
+            localStorage.setItem("sessionActive", "true");
+
             setMessage(""); // Clear any previous error messages
-            navigate("/games"); // Navigate to the "games" page after successful login
+            navigate("/games"); // Redirect to the "games" page
         } else {
             setMessage("Attention: Invalid username or password!"); // Display error message
             setPassword(""); // Clear the password field
@@ -65,7 +67,7 @@ function LoginComponent() {
                     <p className="signup-text">
                         Don&apos;t have an account?{" "}
                     </p>
-                    <button onClick={() => navigate("/signup")} className="btn-link">Sign Up</button>
+                    <button onClick={() => navigate("/signup")} className="btn-signup-link">Sign Up</button>
                 </div>
             </form>
 

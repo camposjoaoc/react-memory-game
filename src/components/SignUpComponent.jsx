@@ -98,15 +98,15 @@ function SignUpComponent() {
                 />
                 {/* Submit button */}
                 <button type="submit" className="btn-signup">
-                    Create
+                    Create Account
                 </button>
                 {/* Display error or success messages */}
                 <p className="message">{message}</p>
                 <p className="signup-text">
                     Already have an account?{" "}
-                    <span onClick={() => navigate("/")} className="btn-link">
+                    <button onClick={() => navigate("/")} className="btn-link" type="button">
                         Sign in
-                    </span>
+                    </button>
                 </p>
             </form>
         </div>

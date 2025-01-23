@@ -45,6 +45,12 @@ body {
   color: #fff;
 }
 
+.buttons-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 .card-grid {
   margin-top: 40px;
   display: grid;
@@ -59,8 +65,8 @@ p {
   font-weight: 900;
 }
 
-
-@media (max-width: 900px) { 
+/* Tablet styles: medium screens (768px to 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .App {
     padding: 10px;
     display: flex;
@@ -82,16 +88,15 @@ p {
   }
 
   .card-grid {
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 10px;
-   justify-content: space-evenly;
-   align-items: center;
+    grid-template-columns: repeat(3, 0.6fr);
+    gap: 20px;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
 
-
-
-@media (max-width: 480px) { 
+/* Mobile styles: small screens (max-width: 767px) */
+@media screen and (max-width: 767px) {
   .app {
     padding: 5px;
     display: flex;
@@ -99,16 +104,21 @@ p {
     justify-content: center;
     align-items: center;
   }
-  
+
   .title-game {
     font-size: 20px;
     padding: 5px 10px;
   }
 
+  .card {
+    margin: 0;
+    padding: 0;
+  }
+
   .card-grid {
-    grid-template-columns: repeat(3, 1fr); 
-    grid-gap: 8px;
-    justify-content: center; 
+    grid-template-columns: repeat(3, 0.5fr);
+    grid-gap: 20px;
+    justify-content: center;
     align-items: center;
   }
 
@@ -121,4 +131,5 @@ p {
   p {
     font-size: 18px;
   }
+
 }

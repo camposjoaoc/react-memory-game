@@ -1,0 +1,38 @@
+.btn-logoff-game {
+    background-color: #1B5224;
+    border: 1px solid #FFAA00;
+    height: 40px;
+    width: 130px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: #FFAA00;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn-logoff-game:hover {
+    background: #FFAA00;
+    color: #fff;
+}
+
+
+/* Tablet styles: medium screens (768px to 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .btn-logoff-game {
+        font-size: 14px;
+        height: 36px;
+        width: 120px;
+    }
+}
+
+/* Mobile styles: small screens (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    .btn-logoff-game {
+        width: 80px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+}
